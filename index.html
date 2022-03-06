@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First DAPP</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .table-borderless > tbody > tr > td,
+      .table-borderless > tbody > tr > th,
+      .table-borderless > tfoot > tr > td,
+      .table-borderless > tfoot > tr > th,
+      .table-borderless > thead > tr > td,
+      .table-borderless > thead > tr > th {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-4 col-md-4 col-sm-4 col-xs-6">
+          <td>
+            <button type="button" class="btn btn-primary" id="btnregdisp">
+              Register
+            </button>
+          </td>
+        </div>
+        <div class="col col-4 col-md-6 col-sm-4 col-xs-4">
+          <td>
+            <button type="button" class="btn btn-primary" id="btnviewdisp">
+              View
+            </button>
+          </td>
+        </div>
+        <br />
+        <br />
+        <div>
+          <td>
+            <select id="roles" class="form-control">
+              <option value="1">Student</option>
+              <option value="2">Teacher</option>
+              <option value="3">Office</option>
+            </select>
+          </td>
+        </div>
+      </div>
+    </div>
+    <!--registration-->
+    <div class="container">
+      <div class="row" id="regdiv" style="display: none;">
+        <div class="col col-12 col-md-12 col-sm-12 col-xs-12">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td colspan="2" style="text-align: center;">
+                  <h2>Registration</h2>
+                </td>
+              </tr>
+              <tr>
+                <td>UserName</td>
+                <td>
+                  <input type="text" class="form-control" id="fm_usr" />
+                </td>
+              </tr>
+              <tr>
+                <td>PassWord</td>
+                <td>
+                  <input type="password" class="form-control" id="fm_pwd" />
+                </td>
+              </tr>
+              <tr>
+                <td>DOB</td>
+                <td>
+                  <input type="date" class="form-control" id="fm_dob" />
+                </td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>
+                  <input type="text" class="form-control" id="fm_addr" />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="text-align: center;">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="App.update()"
+                  >
+                    Register
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <!--View form-->
+    <div class="container">
+      <div class="row" id="viewdiv" style="display: none;">
+        <div class="col col-12 col-md-12 col-sm-12 col-xs-12">
+          <table class="table table-borderless" id="tbldisp">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">PasWord</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Address</th>
+                <th scope="col">Eth_Address</th>
+                <th scope="col">Role</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!---Student Dash boards Starts-->
+    <div class="container" style="display: none;" id="studentdiv">
+      <h1>Welcome to Student Dashboard</h1>
+    </div>
+    <!---Student Dash boards Ends-->
+    <!---Teacher Dash boards Starts-->
+    <div class="container" style="display: none;" id="teacherdiv">
+      <h1>Welcome to Teacher Dashboard</h1>
+    </div>
+    <!---Teacher Dash boards Ends-->
+    <!---Office Dash boards Starts-->
+    <div class="container" style="display: none;" id="officediv">
+      <h1>Welcome to Office Dashboard</h1>
+    </div>
+    <!---Office Dash boards Ends-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/truffle-contract.js"></script>
+    <script src="./js/web3.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
